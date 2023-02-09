@@ -1,6 +1,7 @@
 module.exports = {
     extends: [
         'airbnb',
+        'plugin:i18next/recommended',
     ],
     parser: '@babel/eslint-parser',
     parserOptions: {
@@ -22,6 +23,7 @@ module.exports = {
         'import',
         'jsx-a11y',
         'react-hooks',
+        'i18next',
     ],
     rules: {
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx'] }],
@@ -136,12 +138,14 @@ module.exports = {
             },
 
             plugins: ['jsx-a11y',
-                '@typescript-eslint'],
+                '@typescript-eslint',
+                'i18next'],
 
             extends: [
                 'plugin:@typescript-eslint/recommended',
                 'airbnb-typescript',
                 'plugin:import/typescript',
+                'plugin:i18next/recommended',
             ],
             rules: {
                 'react/react-in-jsx-scope': 'off',
@@ -170,6 +174,7 @@ module.exports = {
                 '@typescript-eslint/no-explicit-any': 'off',
                 'no-console': 'off',
                 'react/require-default-props': 'off',
+                'i18next/no-literal-string': ['error', { markupOnly: true }],
             },
         },
     ],
