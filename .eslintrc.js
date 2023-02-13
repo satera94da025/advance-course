@@ -175,6 +175,7 @@ module.exports = {
                 'no-console': 'off',
                 'react/require-default-props': 'off',
                 'i18next/no-literal-string': ['error', { markupOnly: true }],
+                'no-multi-spaces': 'off',
             },
         },
     ],
