@@ -26,7 +26,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
     }),
   ];
   if (isDev) {
-    plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
   }
   return plugins;
 }
