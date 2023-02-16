@@ -10,6 +10,7 @@ declare module '*.scss' {
   const css: { [key: string]: string };
   export default css;
 }
+declare module 'webpack-bundle-analyzer';
 
 declare module '*.svg' {
   import * as React from 'react';
@@ -23,5 +24,5 @@ declare module '*.svg' {
 declare module '*.png'
 declare module '*.jpg'
 declare module '*.jpeg'
-// eslint-disable-next-line @typescript-eslint/naming-convention
+// eslint-disable-next-line @typescript-eslint/naming-convention,no-unused-vars
 declare const __IS_DEV__: boolean;

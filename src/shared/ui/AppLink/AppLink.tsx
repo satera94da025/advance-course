@@ -17,23 +17,23 @@ interface AppLinkProps {
 }
 
 const AppLink: FC<AppLinkProps> = (props) => {
-  const {
-    to, className, children, otherProps, theme = AppLinkTheme.PRIMARY, 
-  } = props;
+    const {
+        to, className, children, otherProps, theme = AppLinkTheme.PRIMARY,
+    } = props;
 
-  return (
-      <Link
-          {...otherProps}
-          to={to}
-          className={classNames(
-            cls.AppLink,
-            { theme },
-            [className, cls[theme]],
-          )}
-      >
-          {children}
-      </Link>
-  );
+    return (
+        <Link
+            {...otherProps}
+            to={to}
+            className={classNames(
+                cls.AppLink,
+                { theme },
+                [className, cls[theme]],
+            )}
+        >
+            {children}
+        </Link>
+    );
 };
 
 export default AppLink;

@@ -8,19 +8,19 @@ interface LangSwitcherProps {
 }
 
 function LangSwitcher({ className }: LangSwitcherProps) {
-  const { t, i18n } = useTranslation();
-  const toggle = () => i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    const { t, i18n } = useTranslation();
+    const toggle = () => i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
 
-  return (
-      <Button
-          className={classNames(cls.LangSwitcher, {}, [className])}
-          theme={ThemeButton.Clear}
-          onClick={toggle}
-      >
-          {t('Язык')}
-      </Button>
+    return (
+        <Button
+            className={classNames(cls.LangSwitcher, {}, [className])}
+            theme={ThemeButton.Clear}
+            onClick={toggle}
+        >
+            {t('Язык')}
+        </Button>
 
-  );
+    );
 }
 
 export default LangSwitcher;
