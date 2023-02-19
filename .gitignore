@@ -1,6 +1,5 @@
 # Project exclude paths
 /build/
 /node_modules/
-/idea
-/loki
+.idea
 /storybook-static
