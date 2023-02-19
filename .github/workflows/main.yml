@@ -1,10 +1,10 @@
-name: linting, testing, building
-on:
+  name: linting, testing, building
+  on:
   push:
     branches: [ develop ]
   pull_request:
     branches: [ develop ]
-jobs:
+ jobs:
   pipeline:
     runs-on: ubuntu-latest
     strategy:
@@ -27,4 +27,8 @@ jobs:
         run: npm run lint:scss
       - name: unit testing
         run: npm run test:unit
+      - name: unit testing
+        run: npm run test:unit
+      - name: screenshot testing
+        run: npm run test:ui:ci
 
