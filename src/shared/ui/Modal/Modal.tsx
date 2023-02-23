@@ -52,14 +52,12 @@ export const Modal = ({
     }, [closeHandler]);
 
     useEffect(() => {
-        console.log(1);
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
         }
         return () => {
             clearTimeout(timeRef.current);
             window.removeEventListener('keydown', onKeyDown);
-            console.log(2);
         };
     }, [isOpen, onKeyDown]);
 
