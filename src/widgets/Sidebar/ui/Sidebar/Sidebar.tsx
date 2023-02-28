@@ -6,8 +6,8 @@ import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
-import { RoutePath } from "../../../../shared/config/routeConfig/routeConfig";
-import { AppLink, AppLinkTheme } from "../../../../shared/ui/AppLink/AppLink";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 
 import cls from './Sidebar.module.scss';
 
