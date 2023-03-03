@@ -37,6 +37,7 @@ export default {
         '^.+\\.(css|less|scss)$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         '@/(.*)': '<rootDir>/src/$1',
+        '^axios$': require.resolve('axios'),
     },
     // All imported modules in your tests should be mocked automatically
     // automock: false,
