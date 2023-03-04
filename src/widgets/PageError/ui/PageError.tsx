@@ -16,7 +16,7 @@ export const PageError = ({ className, error }: PageErrorProps) => {
     return (
         <div className={classNames(cls.PageError, {}, [className])}>
             <h1>{t('Что то пошло не так')}</h1>
-            <textarea value={error?.toString()} onChange={() => {}} />
+            <textarea value={error?.toString()} onChange={(e) => { console.log(e); }} />
             <Button onClick={reloadPage}>{t('Обновить страницу')}</Button>
         </div>
     );

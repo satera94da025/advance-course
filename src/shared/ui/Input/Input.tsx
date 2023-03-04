@@ -1,5 +1,5 @@
 import {
-    ChangeEvent, InputHTMLAttributes, useEffect, useRef, useState,
+    ChangeEvent, InputHTMLAttributes, useEffect, useRef, useState, memo,
 } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from './Input.module.scss';
@@ -12,7 +12,7 @@ interface InputProps extends HTMLInputProps{
     onChange?: (value: string) => void
 }
 
-export const Input = ({
+export const Input = memo(({
     className, value, onChange, type = 'text', placeholder, autoFocus, ...otherProps
 }: InputProps) => {
     const ref = useRef<HTMLInputElement>(null);
@@ -44,6 +44,7 @@ export const Input = ({
             )}
             <div className={cls.caretWrapper}>
                 <input
+                    {...otherProps}
                     ref={ref}
                     onFocus={onFocus}
                     onBlur={onBlur}
@@ -53,7 +54,6 @@ export const Input = ({
                     value={value}
                     onChange={onChangeHandler}
                     onSelect={onSelect}
-                    {...otherProps}
                 />
                 {
                     isFocused && (
@@ -64,4 +64,4 @@ export const Input = ({
 
         </div>
     );
-};
+});

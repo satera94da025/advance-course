@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Alex",
+    "lastname": "Dovydov",
+    "age": 28,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "SPB",
+    "username": "admin",
+    "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.lrt.lt%2Fru%2Fnovosti%2F17%2F1316834%2Fpodel-niki-po-armageddonu-kak-stalin-gotovil-novuiu-voinu&psig=AOvVaw2P_-QVm79Pmq5czD5AM2Kg&ust=1677954917798000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOjnsqizwP0CFQAAAAAdAAAAABAE"
+  }
 }
