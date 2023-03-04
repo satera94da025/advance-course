@@ -27,3 +27,4 @@ declare module '*.jpg'
 declare module '*.jpeg'
 // eslint-disable-next-line @typescript-eslint/naming-convention,no-unused-vars
 declare const __IS_DEV__: boolean;
+declare const __API__: string;

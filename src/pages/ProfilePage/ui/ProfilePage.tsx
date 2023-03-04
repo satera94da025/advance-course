@@ -5,6 +5,7 @@ import {
     DynamicModuleLoader,
     ReducerList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { memo } from "react";
 
 interface ProfilePageProps {
     className?: string
@@ -19,11 +20,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
-                {t('PROFILE PAGE')}
+                {t('Страница профиля')}
             </div>
         </DynamicModuleLoader>
 
     );
 };
 
-export default ProfilePage;
+export default memo(ProfilePage);
