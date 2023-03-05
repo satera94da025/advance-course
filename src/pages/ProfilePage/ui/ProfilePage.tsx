@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { fetchProfileData, ProfileCard, profileReducer } from "entities/Profile";
 import {
@@ -17,7 +16,6 @@ const reducers: ReducerList = {
 };
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
-    const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
     useEffect(() => {

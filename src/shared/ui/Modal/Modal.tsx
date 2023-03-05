@@ -1,8 +1,8 @@
 import {
-    ReactNode, MouseEvent, useState, useRef, useEffect, useCallback,
+    ReactNode, MouseEvent, useState, useRef, useEffect, useCallback, MutableRefObject,
 } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
-import { useTheme } from "../../../app/providers/ThemeProvider";
+import { classNames, Mods } from "shared/lib/classNames/classNames";
+import { useTheme } from "app/providers/ThemeProvider";
 import { Portal } from "../Portal/Portal";
 import cls from './Modal.module.scss';
 
@@ -23,7 +23,7 @@ export const Modal = ({
     isOpen,
     lazy,
 }: ModalProps) => {
-    const timeRef = useRef<ReturnType<typeof setTimeout>>();
+    const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout >>;
 
     const { theme } = useTheme();
 
@@ -48,7 +48,7 @@ export const Modal = ({
 
     const onContentClick = (e: MouseEvent<HTMLDivElement>): void => e.stopPropagation();
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };

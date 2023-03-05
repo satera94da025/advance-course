@@ -10,13 +10,14 @@ interface LoginByUsernameProps {
 
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, ThunkConfig<string>>(
     'login/loginByUsername',
-    async (authData, thunkApi) => {
+    async (
+        authData,
+        thunkApi,
+    ) => {
         const { extra, dispatch, rejectWithValue } = thunkApi;
         try {
             const { data } = await extra.api.post<User>('login', authData);
-            if (!data) {
-                throw new Error();
-            }
+            if (!data) throw new Error();
             localStorage.setItem(USER_LOCALSTORAGE, JSON.stringify(data));
             dispatch(userActions.setAuthData(data));
             extra.navigate('/about');

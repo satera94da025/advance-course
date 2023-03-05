@@ -1,11 +1,8 @@
-import axios from "axios";
 import { userActions } from "entities/User";
-import { TestAsyncThunk } from "../../../../../shared/lib/tests/testAsyncThunk/testAsyncThunk";
+import { TestAsyncThunk } from "shared/lib/tests/testAsyncThunk/testAsyncThunk";
 import { loginByUsername } from "./loginByUsername";
 
 jest.mock('axios');
-
-const mockedAxios = jest.mocked(axios, true);
 
 describe('loginByUsername', () => {
     // let dispatch: Dispatch;
@@ -42,25 +39,25 @@ describe('loginByUsername', () => {
 
     test('success login', async () => {
         const userValue = { username: '123', id: '1' };
-        mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
 
         const thunk = new TestAsyncThunk(loginByUsername);
+        thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
         const { meta, payload } = await thunk.callThunk({ username: 'admin', password: '123' });
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(3);
         expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
-        expect(mockedAxios.post).toHaveBeenCalled();
+        expect(thunk.api.post).toHaveBeenCalled();
         expect(meta.requestStatus).toBe('fulfilled');
         expect(payload).toEqual(userValue);
     });
 
     test('error login', async () => {
-        mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }));
         const thunk = new TestAsyncThunk(loginByUsername);
+        thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
         const { meta, payload } = await thunk.callThunk({ username: 'admin', password: '1234' });
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(2);
-        expect(mockedAxios.post).toHaveBeenCalled();
+        expect(thunk.api.post).toHaveBeenCalled();
         expect(meta.requestStatus).toBe('rejected');
         expect(payload).toEqual('Error');
     });

@@ -53,6 +53,7 @@ module.exports = {
         "jsx-a11y/no-static-element-interactions": "off",
         "no-param-reassign": "off",
         "jsx-a11y/no-autofocus": "off",
+        "@typescript-eslint/no-explicit-any": "off",
     },
     globals: {
         _IS_DEV_: true,

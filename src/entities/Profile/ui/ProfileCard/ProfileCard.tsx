@@ -5,8 +5,6 @@ import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
 import { Text } from "shared/ui/Text/Text";
 import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
-import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
-import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -16,8 +14,8 @@ interface ProfileCardProps {
 export const ProfileCard = ({ className }: ProfileCardProps) => {
     const { t } = useTranslation('profile');
     const data = useSelector(getProfileData);
-    const isLoading = useSelector(getProfileIsLoading);
-    const error = useSelector(getProfileError);
+    // const isLoading = useSelector(getProfileIsLoading);
+    // const error = useSelector(getProfileError);
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>
             <div className={cls.header}>
