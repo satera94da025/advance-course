@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Avatar } from './Avatar';
-import Stalin from './Stalin.svg';
 
 export default {
     title: 'shared/Avatar',
@@ -16,12 +15,12 @@ export const Primary = Template.bind({});
 
 Primary.args = {
     size: 150,
-    src: Stalin as unknown as string,
+    src: 'https://gdb.voanews.com/455403FE-91EA-4ABE-8D29-3862282EC56B_cx0_cy9_cw0_w408_r1_s.jpg',
 };
 
 export const Small = Template.bind({});
 
 Small.args = {
     size: 50,
-    src: Stalin as unknown as string,
+    src: 'https://gdb.voanews.com/455403FE-91EA-4ABE-8D29-3862282EC56B_cx0_cy9_cw0_w408_r1_s.jpg',
 };
