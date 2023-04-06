@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "sdsd",
+      "id": "_tKHjna"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "we",
+      "id": "Sxt_irS"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "weww",
+      "id": "v9xUfqC"
     }
   ],
   "users": [
@@ -118,14 +138,28 @@
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg33ytmaEuSr1Lie3U-oRtMaRdaq-a4-9krdW088CVoJfB5wUNzybbMYs6mXvQGWBh098&usqp=CAU"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://gdb.voanews.com/455403FE-91EA-4ABE-8D29-3862282EC56B_cx0_cy9_cw0_w1080_h608_s.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "azamat",
+      "lastname": "bogatov",
+      "age": 65,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://otkritkis.com/wp-content/uploads/2022/06/ra8je.jpg"
+    },
+    {
+      "id": "2",
+      "first": "igor",
+      "lastname": "kot",
+      "age": 46,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "balander",
+      "avatar": "https://avatars.mds.yandex.net/i?id=2bf8c047d61a77491675e765c2a8f65d538037fe-9182388-images-thumbs&n=13"
+    }
+  ]
 }

@@ -2,10 +2,13 @@ import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
-import { getProfileReadonly, profileActions, updateProfileData } from "entities/Profile";
+import {
+    getProfileData, getProfileReadonly, profileActions, updateProfileData,
+} from "entities/Profile";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Text } from "shared/ui/Text/Text";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { getUserAuthData } from "../../../../entities/User";
 import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -15,6 +18,9 @@ interface ProfilePageHeaderProps {
 export const ProfilePageHeader = memo(({ className }: ProfilePageHeaderProps) => {
     const { t } = useTranslation('profile');
     const readonly = useSelector(getProfileReadonly);
+    const authData = useSelector(getUserAuthData);
+    const profileData = useSelector(getProfileData);
+    const canEdit = authData?.id === profileData?.id;
     const dispatch = useAppDispatch();
 
     const buttonText = readonly ? t('Редактировать') : t('Отменить');
@@ -38,14 +44,19 @@ export const ProfilePageHeader = memo(({ className }: ProfilePageHeaderProps) =>
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
             <Text title={t('Профиль')} />
-            <Button onClick={handler} className={cls.editBtn} theme={buttonTheme}>
-                { buttonText }
-            </Button>
-            {!readonly && (
-                <Button onClick={onSave} theme={ButtonTheme.OUTLINE}>
-                    { t('Сохранить') }
-                </Button>
+            {canEdit && (
+                <div className={cls.btnsWrapper}>
+                    <Button onClick={handler} className={cls.editBtn} theme={buttonTheme}>
+                        { buttonText }
+                    </Button>
+                    {!readonly && (
+                        <Button onClick={onSave} theme={ButtonTheme.OUTLINE}>
+                            { t('Сохранить') }
+                        </Button>
+                    )}
+                </div>
             )}
+
         </div>
     );
 });
