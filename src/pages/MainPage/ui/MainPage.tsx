@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
+import { Page } from "shared/ui/Page/Page";
 
 function MainPage() {
     const { t } = useTranslation('main');
@@ -8,14 +9,14 @@ function MainPage() {
 
     const onChange = (val: string) => setValue(val);
     return (
-        <div>
+        <Page>
             {t('Главная страница')}
             <Input
                 value={value}
                 placeholder="Введите текст"
                 onChange={onChange}
             />
-        </div>
+        </Page>
     );
 }
 
