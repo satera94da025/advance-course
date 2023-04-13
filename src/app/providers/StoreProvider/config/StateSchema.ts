@@ -10,10 +10,12 @@ import { ArticleDetailsSchema } from "entities/Article";
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
 import { AddCommentFormSchema } from "features/addCommentsForm";
 import { ArticlesPageSchema } from "pages/ArticlesPage";
+import { UISchema } from "features/UI";
 
 export interface StateSchema {
     counter: CounterSchema
     user: UserSchema
+    ui: UISchema
     // AsyncReducers
     loginForm?: LoginSchema
     profile?: ProfileSchema
@@ -21,6 +23,7 @@ export interface StateSchema {
     articleDetailsComments?: ArticleDetailsCommentsSchema
     addCommentForm?: AddCommentFormSchema
     articlesPage?: ArticlesPageSchema
+
 }
 
 export type StateSchemaKey = keyof StateSchema;
