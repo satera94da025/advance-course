@@ -54,6 +54,7 @@ module.exports = {
         "no-param-reassign": "off",
         "jsx-a11y/no-autofocus": "off",
         "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-empty-interface": "off",
     },
     globals: {
         _IS_DEV_: true,
