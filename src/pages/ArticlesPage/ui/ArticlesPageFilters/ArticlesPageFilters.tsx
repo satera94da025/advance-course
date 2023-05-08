@@ -63,8 +63,8 @@ export const ArticlesPageFilters = ({ className }: ArticlesPageFiltersProps) => 
     const onChangeType = useCallback((value: ArticleType) => {
         dispatch(articlesPageActions.setType(value));
         dispatch(articlesPageActions.setPage(1));
-        debounceFetchData();
-    }, [dispatch, debounceFetchData]);
+        fetchData();
+    }, [dispatch, fetchData]);
 
     return (
         <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
