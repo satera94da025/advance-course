@@ -1,19 +1,35 @@
 {
   "compilerOptions": {
+    "strictNullChecks": false,
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext",
-    "target": "es5",
-    "jsx": "react",
+    "target": "ES5",
+    "jsx": "react-jsx",
     "allowJs": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
+    //для обсолютного импорта
+    "baseUrl": ".",
+    "strict": true,
+    "paths": {
+      "*": ["./src/*"]
+    },
+    //esModuleInterop позволяет работать с пакетами, которые используют
+    // common js как с обычными пакетами с помощью import require() module.export
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "."
+    "allowSyntheticDefaultImports": true
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "moduleNameMapper": {
+    "@App/(.*)": "<rootDir>/src/$1",
+    "@Shared/(.*)": "<rootDir>/src/Shared/$1"
+  },
+  "include": [
+    "./config/jest/setupTests.ts",
+    "src/**/*"
+  ]
 }
