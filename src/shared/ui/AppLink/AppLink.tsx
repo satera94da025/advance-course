@@ -1,4 +1,5 @@
-import { FC, ReactNode } from 'react';
+import * as React from "react";
+import { AnchorHTMLAttributes, FC, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './AppLink.module.scss';
@@ -8,7 +9,7 @@ export enum AppLinkTheme {
   SECONDARY = 'secondary',
 }
 
-interface AppLinkProps {
+interface AppLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement>{
   className?: string
   children: ReactNode
   to: string
